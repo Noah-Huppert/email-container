@@ -1,11 +1,9 @@
-FROM centos:latest
+FROM ubuntu:latest
 
 # {{{1 Install packages
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-RUN yum update -y
-RUN yum install -y postfix opendkim
-
-RUN ln -s /usr/sbin/post* /usr/bin/
+RUN apt-get update -y
+RUN apt-get upgrade -y
+RUN apt-get install -y mailutils opendkim postfix
 
 # {{{1 Configuration files
 # {{{2 System

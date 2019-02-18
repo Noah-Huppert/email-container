@@ -52,7 +52,7 @@ queue_directory = /var/spool/postfix
 # The command_directory parameter specifies the location of all
 # postXXX commands.
 #
-command_directory = /usr/bin
+command_directory = /usr/sbin
 
 # The daemon_directory parameter specifies the location of all Postfix
 # daemon programs (i.e. programs listed in the master.cf file). This
@@ -682,6 +682,6 @@ shlib_directory = no
 
 # MAIL FILTER
 #milter_protocol = 6
-#milter_default_action = accept
+milter_default_action = accept
 smtpd_milters = inet:[127.0.0.1]:12301
 non_smtpd_milters = inet:[127.0.0.1]:12301
